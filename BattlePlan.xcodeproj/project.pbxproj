@@ -15,6 +15,7 @@
 		CD0D164329FE620300A297EA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0D164229FE620300A297EA /* Item.swift */; };
 		CD0D164529FEAC5900A297EA /* ItemEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0D164429FEAC5900A297EA /* ItemEditView.swift */; };
 		CD0D164729FEAD5900A297EA /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0D164629FEAD5900A297EA /* Plan.swift */; };
+		CD0D164929FF0C8B00A297EA /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0D164829FF0C8B00A297EA /* TrailingIconLabelStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		CD0D164229FE620300A297EA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CD0D164429FEAC5900A297EA /* ItemEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditView.swift; sourceTree = "<group>"; };
 		CD0D164629FEAD5900A297EA /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
+		CD0D164829FF0C8B00A297EA /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		CD0D163E29FE604500A297EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CD0D164829FF0C8B00A297EA /* TrailingIconLabelStyle.swift */,
 				CD0D163229FE56C500A297EA /* ItemCardView.swift */,
 				CD0D164429FEAC5900A297EA /* ItemEditView.swift */,
 				CD0D163F29FE605B00A297EA /* PlanView.swift */,
@@ -171,6 +174,7 @@
 				CD0D164029FE605B00A297EA /* PlanView.swift in Sources */,
 				CD0D163329FE56C500A297EA /* ItemCardView.swift in Sources */,
 				CD0D163129FE56C500A297EA /* BattlePlanApp.swift in Sources */,
+				CD0D164929FF0C8B00A297EA /* TrailingIconLabelStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
