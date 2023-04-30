@@ -1,17 +1,11 @@
-//
-//  BattlePlanApp.swift
-//  BattlePlan
-//
-//  Created by Michael Bisgaard Olesen on 30/04/2023.
-//
-
 import SwiftUI
 
 @main
 struct BattlePlanApp: App {
+    @State var plan = Plan.sampleData // TODO
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PlanView(plan: $plan)
         }
     }
 }
