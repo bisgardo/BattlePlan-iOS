@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ItemCardView: View {
+    static let deadlineFormat = Date.FormatStyle().hour().minute()
     var item: Item
     var deadline: Date
     
@@ -14,7 +15,7 @@ struct ItemCardView: View {
                     .font(.caption)
                     .foregroundColor(.gray)
                 Spacer()
-                Label(deadline.formatted(Date.FormatStyle().hour().minute()), systemImage: "clock")
+                Label(deadline.formatted(Self.deadlineFormat), systemImage: "clock")
                     .font(.caption)
                     .labelStyle(.trailingIcon)
                     .padding([.trailing], 4)

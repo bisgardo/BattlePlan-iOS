@@ -5,7 +5,6 @@ struct Plan {
     var deadline: Date
     
     var itemDeadlines: [Date] {
-        print("computing!")
         var lastDeadline = deadline
         var res = items.reversed().map {
             lastDeadline -= TimeInterval($0.durationMinutes * 60)
