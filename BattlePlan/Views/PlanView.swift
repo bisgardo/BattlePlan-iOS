@@ -2,6 +2,9 @@ import SwiftUI
 
 struct PlanView: View {
     @Binding var plan: Plan
+    @State private var showingEditView = false
+    
+    @State var editItem: Binding<Item>?
     
     static let formatter = {
         let f = RelativeDateTimeFormatter()
@@ -17,12 +20,16 @@ struct PlanView: View {
                     if let startTime = itemDeadlines.first {
                         let durationSinceNow = startTime.timeIntervalSinceNow
                         Text("\(durationSinceNow > 0 ? "Starting" : "Started") \(Self.formatter.localizedString(fromTimeInterval: durationSinceNow))")
+                    } else {
+                        Text("Click '+' to add plan item")
                     }
                     
                     List(plan.items.indices, id: \.self) { idx in
-                        NavigationLink(destination: ItemEditView(item: $plan.items[idx])) {
-                            ItemCardView(item: plan.items[idx], deadline: itemDeadlines[idx])
-                        }
+                        ItemCardView(item: plan.items[idx], deadline: itemDeadlines[idx])
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                editItem = $plan.items[idx]
+                            }
                     }
                     
                     DatePicker(
@@ -41,11 +48,16 @@ struct PlanView: View {
                 .navigationTitle("Battle Plan")
                 .toolbar {
                     Button(action: {
+                        // Cannot set 'editItem' to this item as that causes an index out of bounds exception somewhere - Swift isn't able to tell where...
                         plan.items.append(Item(title: "New Item", durationMinutes: 0))
                     }) {
                         Image(systemName: "plus")
                     }
                     .accessibilityLabel("New Item")
+                }.sheet(item: $editItem) { $item in
+                    NavigationView { // for showing nav title
+                        ItemEditView(item: $item)
+                    }
                 }
             }
         }
